@@ -6,7 +6,5 @@ window.addEventListener('load',function(){
     squares.forEach(function(elem){
         elem.setAttribute('class','square')
     });
-
-    this.console.log(squares);
 });
 
