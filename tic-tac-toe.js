@@ -1,6 +1,7 @@
 "use strict";
 
 window.onload = function() {
+  let turn = "X";
   let squares = this.document.querySelectorAll("#board > div");
   squares.forEach(function(elem) {
     elem.setAttribute("class", "square");
@@ -17,30 +18,32 @@ window.onload = function() {
     status.classList.remove("you-won");
     divs.forEach(function(el) {
       var rem = el.firstChild;
-     
+
       try {
         el.removeChild(rem);
       } catch (error) {
-        error
+        error;
       }
 
       rem = el.lastChild;
-     
     });
   });
 
   this.Object.entries(divs).map(object => {
     object[1].addEventListener("click", function() {
-      var myArray = ["O", "X"];
-      var rand = myArray[Math.floor(Math.random() * myArray.length)];
-      if (rand === "O") {
+     /*  var myArray = ["O", "X"];
+       var rand = myArray[Math.floor(Math.random() * myArray.length)]; */
+      if (turn === "O") {
         this.classList.add("O");
         this.classList.remove("X");
         this.innerHTML = "O";
-      } else if (rand === "X") {
+      turn = "X";
+      } else if (turn === "X") {
         this.classList.add("X");
         this.classList.remove("O");
         this.innerHTML = "X";
+        turn = "X";
+      turn = "O";
       }
 
       if (
