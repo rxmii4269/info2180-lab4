@@ -7,6 +7,28 @@ window.onload = function() {
   });
 
   let divs = document.querySelectorAll(".square");
+  let status = document.querySelector("#status");
+
+  let reset = this.document.querySelector(".controls");
+  reset.addEventListener("click", function() {
+    status.removeChild(status.firstChild);
+    status.innerHTML =
+      "Move your mouse over a square and click to play an X or an O.";
+    status.classList.remove("you-won");
+    divs.forEach(function(el) {
+      var rem = el.firstChild;
+     
+      try {
+        el.removeChild(rem);
+      } catch (error) {
+        error
+      }
+
+      rem = el.lastChild;
+     
+    });
+  });
+
   this.Object.entries(divs).map(object => {
     object[1].addEventListener("click", function() {
       var myArray = ["O", "X"];
@@ -20,7 +42,7 @@ window.onload = function() {
         this.classList.remove("O");
         this.innerHTML = "X";
       }
-      let status = document.querySelector("#status");
+
       if (
         divs[0].innerHTML === "X" &&
         divs[1].innerHTML === "X" &&
@@ -28,7 +50,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You win! 012");
       } else if (
         divs[3].innerHTML === "X" &&
         divs[4].innerHTML === "X" &&
@@ -36,7 +57,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You Win! 345");
       } else if (
         divs[6].innerHTML === "X" &&
         divs[7].innerHTML === "X" &&
@@ -44,7 +64,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You win! 678");
       } else if (
         divs[0].innerHTML === "X" &&
         divs[3].innerHTML === "X" &&
@@ -52,7 +71,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You win 036");
       } else if (
         divs[1].innerHTML === "X" &&
         divs[4].innerHTML === "X" &&
@@ -60,7 +78,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You win 147");
       } else if (
         divs[2].innerHTML === "X" &&
         divs[5].innerHTML === "X" &&
@@ -68,7 +85,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You win 258");
       } else if (
         divs[0].innerHTML === "X" &&
         divs[4].innerHTML === "X" &&
@@ -76,7 +92,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You win 048");
       } else if (
         divs[2].innerHTML === "X" &&
         divs[4].innerHTML === "X" &&
@@ -84,7 +99,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! X is the Winner!";
         status.classList.add("you-won");
-        console.log("You win 046");
       } else if (
         divs[0].innerHTML === "O" &&
         divs[1].innerHTML === "O" &&
@@ -92,7 +106,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You win O012");
       } else if (
         divs[3].innerHTML === "O" &&
         divs[4].innerHTML === "O" &&
@@ -100,7 +113,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You Win! O345");
       } else if (
         divs[6].innerHTML === "O" &&
         divs[7].innerHTML === "O" &&
@@ -108,7 +120,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You win! O678");
       } else if (
         divs[0].innerHTML === "O" &&
         divs[3].innerHTML === "O" &&
@@ -116,7 +127,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You win O036");
       } else if (
         divs[1].innerHTML === "O" &&
         divs[4].innerHTML === "O" &&
@@ -124,7 +134,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You win O147");
       } else if (
         divs[2].innerHTML === "O" &&
         divs[5].innerHTML === "O" &&
@@ -132,7 +141,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You win O258");
       } else if (
         divs[0].innerHTML === "O" &&
         divs[4].innerHTML === "O" &&
@@ -140,7 +148,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You win O048");
       } else if (
         divs[2].innerHTML === "O" &&
         divs[4].innerHTML === "O" &&
@@ -148,7 +155,6 @@ window.onload = function() {
       ) {
         status.innerHTML = "Congratulations! O is the Winner!";
         status.classList.add("you-won");
-        console.log("You win O046");
       }
     });
     object[1].addEventListener("mouseover", function() {
